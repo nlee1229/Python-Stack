@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Add a Dojo!</h1>
+    <form action="/process" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="city" placeholder="City">
+        <input type="text" name="state" placeholder="State">
+        <input type="hidden" name="form" value="Dojo">
+        <input type="submit" value="Add Dojo">
+    </form>
+
+    <form action="/process" method="post">
+        {% csrf_token %}
+        <input type="text" name="fname" placeholder="First Name">
+        <input type="text" name="lname" placeholder="Last Name">
+        <select name="dojo_select">
+            {% for d in dojo %}
+                <option value="{{d.id}}">{{d.name}}</option>
+            {% endfor %}
+        </select>
+        <input type="hidden" name="form" value="Ninja">
+        <input type="submit" value="Add Ninja">
+    </form>
+    <hr>
+    <h1>All the Dojos</h1>
+    <ul>
+        {% for d in dojo %}
+        <h3>Ninjas at the {{d.name}} | {{d.ninjas.all | length}}</h3>
+        <a href="/delete/{{d.id}}">Delete Dojo!</a>
+            {% for n in d.ninjas.all %}
+                <li>{{n.fname}} {{n.lname}}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+</body>
+</html>

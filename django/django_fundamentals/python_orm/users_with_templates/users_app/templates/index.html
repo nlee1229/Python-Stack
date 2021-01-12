@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users with Templates</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+</head>
+<body>
+
+    <h1>All the Users</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+        <!-- within the allusers, we're making a for loop out of it becuase there are multiple varibale in the alluser user.objects in line 7 views -->
+        {% for i in allusers %} 
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.first_name }} {{i.last_name}}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.age }}</td>
+        </tr>
+            {% endfor %}
+    </table>
+
+    <hr>
+        <h1>Add a User</h1>
+
+    <div id = "input_box">
+        <p>First Name:</p>
+        <p>Last name:</p>
+        <p>Email:</p>
+        <p>Age:</p>
+    </div>
+
+    <div id = "inputs">
+        <form action="/newdata" method="POST">
+            {% csrf_token %}
+    
+            <input type="text" name="first_name">
+            <input type="text" name="last_name">
+            <input type="email" name="email">
+            <input type="number" name="age">
+            
+            <button type="submit">Add</button>
+    
+        </form>
+    </div>
+    
+    <a href="/delete">Delete Last Data</a>
+
+    
+</body>
+</html>

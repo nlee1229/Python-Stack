@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello {{myuser.fname}}</h1>
+    <a href="/logout">Logout</a>
+    <a href="/main/books/newtrip">Create a new trip!</a>
+    <h2>Your trips:</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Destination</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Plan</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            {%for trip in myuser.byusers.all%}
+            <tr>
+                
+
+                <td><a href="/main/books/{{trip.id}}/view">{{trip.destination}}</a></td>
+                <td>{{trip.start_date}}</td>
+                <td>{{trip.end_date}}</td>
+                <td>{{trip.content}}</td>
+                <td><a href="/main/books/{{trip.id}}/remove">Remove</a> | <a href="/main/books/{{trip.id}}/edit">Edit</a></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    
+</body>
+</html>

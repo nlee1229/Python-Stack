@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>{{messages.user.fname}} {{messages.user.lname}} {{messages.created_at}}</h3>
+        <p>{{messages.content}}</p>
+    </div>
+    <div>
+        <form action="/wall/comment/{{messages.id}}/post" method='POST'>
+            {% csrf_token %}
+            <textarea class = "form-control" name="comment" cols="30" rows="10"></textarea>
+            <button>Post a comment!</button>
+    </div>
+        </form>
+        <div>
+            {%for com in comments %}
+            <div>
+                <h3>{{com.user.fname}} {{com.user.lname}} {{com.created_at}}</h3> 
+                <p>{{com.content}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="/wall">GO BACK BRUH.</a>
+
+    
+</body>
+</html>

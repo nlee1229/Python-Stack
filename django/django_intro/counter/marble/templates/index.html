@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div>
+        <h1>Counter</h1>
+        <p>Counting numbers: {{request.session.counter}} </p> 
+        <!-- request.session is the dictionary, and the counter is the key that is connected to line 8 in view.py -->
+        <p> This has been visited: {{request.session.page_counter}} </p> 
+        <form action = "/destroy">
+            <button type = "submit">Clear</button>
+        </form>
+        <form action = "/double">
+            <button type = "submit">Double</button>
+        </form>
+        <form action = "/increment" method = "post">
+            {%csrf_token%}
+            <input type = "number" name = "number" id = "number">
+            <button type = "submit">Put a number!</button>
+        </form>
+
+    </div>
+    
+</body>
+</html>

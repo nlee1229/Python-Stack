@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0 auto;
+    
+}
+
+#container {
+    margin-top: 50px;
+    background-color:white;
+    text-align: center;
+    width: 700px;
+    border: solid black;
+}
+
+h2 {
+    background-color:white;
+    display: block;
+    border: solid black;
+    text-align: center;
+    width: 350px;
+    margin-top: 35px;
+    font-weight: lighter;
+    padding-bottom: 20px;
+    font-size: 15px;
+}
+
+.clock-box {
+    margin-top: 25px;
+    padding-bottom: 50px;
+    width: 300px;
+}
+
+p {
+    font-size: 45px
+}

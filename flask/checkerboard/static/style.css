@@ -1,0 +1,23 @@
+#container {
+    padding: 0;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.checker1, .checker2{
+    width: 80px;
+    height: 80px;
+    margin: -2px;
+    display: inline-block;
+}
+
+.checker1{
+    background-color: black;
+
+}
+
+.checker2{
+    background-color: orange;
+
+}

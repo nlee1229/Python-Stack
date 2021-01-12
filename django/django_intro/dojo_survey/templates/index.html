@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class= "info-box">
+
+        <div class = "left_side">
+            <p>Your Name</p>
+            <p>Dojo location</p>
+            <p>Favorite Language</p>
+        </div>
+
+        <div class = "right_side">  
+        <form action="/results">
+        <label for = "name" ></label>
+        <input type="text" name = "location">
+
+        <input list="dojo_locate">
+        <datalist id="dojo_locate">
+        <option value="San Frandisco"></option>
+        <option value="Los Angels"></option>
+        <option value="Seatt"></option>
+        <option value="Burrrbank"></option>
+        </datalist>
+
+        <input list="fave_lang"> 
+        <datalist id = "fave_lang">
+            <option value="Python">It'll make you scream!</option>
+            <option value="JavaScript">This one is just complicated</option>
+            <option value="HTML">I like this one betterish</option>
+            <option value="C#">Thank God I'm not covering this</option>
+        </datalist> 
+    </div>
+
+
+    </form>
+
+        
+
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "flask/understanding_routing"
+		},
+		{
+			"path": "../Web Fundamentals/HTML"
+		},
+		{
+			"path": "../Web Fundamentals/JavaScript/Playing_With_Objects.js"
+		},
+		{
+			"path": "../Web Fundamentals/JavaScript/dom_demo.js"
+		},
+		{
+			"path": "../Web Fundamentals/CSS/JavaScript_Basic"
+		},
+		{
+			"path": "django/django_intro"
+		}
+	],
+	"settings": {}
+}

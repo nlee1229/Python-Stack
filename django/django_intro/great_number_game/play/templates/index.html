@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great_Number_Game</title>
+    <link rel = "stylesheet" href = "{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div id="container">
+    <h1>Welcome to the Great Number Game!</h1>
+
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+
+    <div class="none" id = "{{request.session.display_low}}">
+        <h1>TOO LOW!</h1>
+    </div>
+
+    <div class="none" id = "{{request.session.display_high}}">
+        <h1>TOO HIGH!</h1>
+    </div>
+
+    <div class="none" id = "{{request.session.answer}}">
+        <h1>YOU GOT IT!</h1>
+    </div>
+
+    <form action = "/guess" method = "POST">
+        {%csrf_token%}
+
+        <input type = "number" name = "number" id = "number">
+    
+        <button type = "submit"> Submit Guess </button>
+    </form>
+    <a href = "reset">Reset Number</a>
+    
+    </div>
+    
+</body>
+</html>

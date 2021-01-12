@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/style.css"%}">
+</head>
+<body>
+    
+    
+    <div id="container">
+
+        <div class="head-box">
+
+            <h1>Add a Dojo</h1>
+            
+            <div class = "par">
+                <p>Name</p>
+                <p>City</p>
+                <p>State</p>
+            </div>
+
+            <div class = "tetris">
+                
+                <form action="/dojo" method="POST">
+                    {% csrf_token %}
+                    
+                    <input type="text" name="name" placeholder="Enter Name Here">
+                    
+                    <input type="text" name="city" placeholder="Enter City Here">
+                    
+                    <input type="text" name="state" placeholder="Enter State Here">
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="head-box">
+
+            <h1>Add a Ninja</h1>
+
+            <div class = "par">
+                <p>First Name</p>
+                <p>Last Name</p>
+                <p>Dojo</p>
+            </div>
+
+            <div class= "tetris">
+                <form action="/add_ninja" method="POST">
+                    {% csrf_token %}
+            
+                    <input type="text" name="fName" placeholder="Enter First Name Here">
+                    
+                    <input type="text" name="lName" placeholder="Enter Last Name Here">
+                    
+                    <select name="dojo_id">
+                        {% for corn in dojos %}
+                        <option value="{{corn.id}}">{{corn.city}}, {{corn.state}}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="foot-box">
+
+            <h1>All the Dojos</h1>
+
+
+            {% for crabs in dojos %}
+                <form action="/delete" method="POST">
+                    {%csrf_token%}
+                    <input type="hidden" name="deletor" value="{{crabs.id}}">
+                    <h4>Ninjas at the {{crabs.name}} Dojo <button type="submit">Delete</button></h4>
+
+                    <ul>
+                        {% for x in crabs.ninjas.all %}
+                            <li>{{x.first_name}} {{x.last_name}}</li>
+                        {% endfor %}
+                    </ul>
+                </form>
+            
+
+            {% endfor %}
+
+            
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>The Wall</h1>
+        <p>Welcome {{user.fname}} {{user.lname}}!</p>
+        <a href="/logout">Log Off</a>
+    </div>
+
+    <div>
+        <form action="/wall/message_post" method = "POST">
+            {%csrf_token%}
+            <div>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                <button>Post a message</button>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        {%for i in messages%}
+        <div>
+            <h3>{{i.user.fname}} {{i.user.lname}} {{i.created_at}}</h3>
+            <p>{{i.content}}</p>
+            <a href="/wall/comment/{{i.id}}">View comments</a>
+            {%if request.session.user_id == i.user.id%}
+            <a href="/wall/comment/{{i.id}}/delete">Delete message</a>
+            {%endif%}
+        </div>
+        {%endfor%}
+
+    </div>
+</body>
+</html>

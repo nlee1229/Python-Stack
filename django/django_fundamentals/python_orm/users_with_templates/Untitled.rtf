@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\froman\fcharset0 Times-Roman;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red63\green63\blue63;\red255\green255\blue255;
+\red48\green61\blue72;}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c31373\c31373\c31373;\cssrgb\c100000\c100000\c100000;
+\cssrgb\c24314\c30588\c35294;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid2\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww13980\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf2 \CocoaLigature0 \
+\pard\pardeftab720\sl364\partightenfactor0
+\cf3 \cb4 \expnd0\expndtw0\kerning0
+\CocoaLigature1 Run the shell and import your User model\
+\pard\pardeftab720\sl504\partightenfactor0
+\cf3 \'a0Query: Create 3 new users\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 Users.objects.create(first_name="Eric", last_name="Wang", email="ericwang98@gmail.com", age=22)\
+Users.objects.create(first_name=\'93Dylan\'94, last_name=\'93Martin\'94, email=\'93dylanmartin@gmail.com\'94, age=22)\
+Users.objects.create(first_name=\'93Nick\'94, last_name=\'93Lee\'94, email=\'93aznnick1234@gmail.com, age=22)\cf3 \cb4 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sl504\partightenfactor0
+\cf3 \'a0Query: Retrieve all the users\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl504\partightenfactor0
+\ls1\ilvl1\cf3 		ClassName.objects.\cf5 all\cf3 () - gets all the records in the table\
+\pard\pardeftab720\sl504\partightenfactor0
+\cf3 \'a0Query: Retrieve the last user\
+		ClassName.objects.last()\
+		Users.objects.last()\
+\'a0Query: Retrieve the first user\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf3 			ClassName.objects.first()\
+\
+			Users.objects.first()\
+\pard\pardeftab720\sl504\partightenfactor0
+\cf3 \'a0Query: Change the user with id=3 so their last name is Pancakes.\
+		c=Users.objects.get(id=3)\
+		c.last_name=\'93Pancakes\'94\
+		c.save()\
+\'a0Query: Delete the user with id=2 from the database\
+		c=Users.objects.get(id=2)\
+		c.delete()\
+\'a0Query: Get all the users, sorted by their first name\
+		Users.objects.all().order_by(\'93first_name\'94)\
+\
+Bonus Query: Users.objects.all()order_by(\'93-first_name\'94)\
+\
+\pard\pardeftab720\sl504\partightenfactor0
+
+\f1 \cf3 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs22 \cf2 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\
+\
+\
+\
+\
+\
+}

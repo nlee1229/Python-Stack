@@ -1,0 +1,49 @@
+*{
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.head-box {
+    width: 800px;
+    height: 300px;
+    display: inline-block;
+}
+
+h1 {
+    font-weight: lighter;
+    color: blue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+body {
+    text-align: center;
+}
+
+.tetris button {
+    display: block;
+    margin-top: 10px;
+}
+
+select {
+    padding:0px 14px;
+}
+
+.par {
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+}
+
+.par p{
+    margin-bottom: 5px;
+}
+
+.tetris input{
+    margin-bottom: 5px;
+}
+
+.tetris {
+    display: inline-block;
+    width: 200px;
+}

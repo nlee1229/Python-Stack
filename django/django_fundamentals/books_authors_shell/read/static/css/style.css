@@ -1,0 +1,21 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+.left, .right {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.left {
+    margin-right: 50px;
+}
+
+.info {
+    margin: 50px;
+}

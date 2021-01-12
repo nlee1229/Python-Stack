@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <<h1>Hello {{myuser.fname}} Create a Trip!</h1>
+    <a href="/logout">Logout</a>
+    <form action="/main/books/new_trip" method = "POST">
+
+
+        {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+        {%csrf_token%}
+        <label for="destination">Destination:</label><br>
+        <input type="text" name="destination" id="destination"><br>
+        <label for="start_date">Start Date:</label><br>
+        <input type="date" name="start_date" id="start_date"><br>
+        <label for="end_date">end_date Date:</label><br>
+        <input type="date" name="end_date" id="end_date"><br>
+        <label for="content">Plan:</label>
+        <textarea name="content" id="plan" cols="30" rows="10"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+
+    
+</body>
+</html>
